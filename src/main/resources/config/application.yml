@@ -1,0 +1,25 @@
+
+#Application info endpoint (/info) configuration
+info:
+   app:
+      name: ${name}
+      description: ${description}
+      version: ${jar.version}
+
+#Logging Configuration
+logging:
+   level:
+      gov.uscis.service: INFO
+      
+#Server SSL Configuration
+#The keystores and passwords need to be supplied external to the application
+server:
+   ssl:
+      enabled: true
+      #client-auth: need
+      #key-store: classpath:certs/server.jks
+      #key-store-password: secret
+      #key-password: secret
+      #key-alias: test
+      #trust-store: classpath:certs/trust.jks
+      #trust-store-password: secret
