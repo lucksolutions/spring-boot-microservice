@@ -5,6 +5,10 @@ info:
       name: ${name}
       description: ${description}
       version: ${jar.version}
+      contact:
+         name: USCIS
+         url: https://www.uscis.gov
+         email:
 
 #Logging Configuration
 logging:
