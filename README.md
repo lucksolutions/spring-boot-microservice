@@ -12,7 +12,7 @@
 * Security
 * Validation
 * Auditing of requests for all endpoints.
-* API Docs (Swagger?)
+* ~~API Docs (Swagger v2)~~
 
 ## Setup
 
