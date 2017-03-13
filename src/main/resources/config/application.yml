@@ -13,9 +13,9 @@ logging:
       
 #Server SSL Configuration
 #The keystores and passwords need to be supplied external to the application
-server:
-   ssl:
-      enabled: true
+#server:
+   #ssl:
+      #enabled: true
       #client-auth: need
       #key-store: classpath:certs/server.jks
       #key-store-password: secret
