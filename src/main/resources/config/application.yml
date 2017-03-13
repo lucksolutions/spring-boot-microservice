@@ -2,18 +2,18 @@
 #Application info endpoint (/info) configuration
 info:
    app:
-      name: ${name}
-      description: ${description}
-      version: ${jar.version}
+      name: microservice
+      description:
+      version: 0.1.0
       contact:
-         name: USCIS
-         url: https://www.uscis.gov
+         name: Org Name
+         url: https://www.example.com
          email:
 
 #Logging Configuration
 logging:
    level:
-      gov.uscis.service: INFO
+      com.lucksolutions.service: INFO
       
 #Server SSL Configuration
 #The keystores and passwords need to be supplied external to the application

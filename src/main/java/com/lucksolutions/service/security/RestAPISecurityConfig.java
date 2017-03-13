@@ -1,4 +1,4 @@
-package gov.uscis.service.security;
+package com.lucksolutions.service.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -12,6 +12,7 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 @EnableWebSecurity
 public class RestAPISecurityConfig extends WebSecurityConfigurerAdapter {
 
+	@Override
 	@Bean
 	public UserDetailsService userDetailsService() {
 		InMemoryUserDetailsManager manager = new InMemoryUserDetailsManager();
@@ -19,8 +20,11 @@ public class RestAPISecurityConfig extends WebSecurityConfigurerAdapter {
 		return manager;
 	}
 	
+	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http
+			.csrf() //Disable CSRF since we are stateless and Single-Origin Policy does not allow application/json POSTs
+				.disable()
 			.sessionManagement()
 				.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
 				.and()

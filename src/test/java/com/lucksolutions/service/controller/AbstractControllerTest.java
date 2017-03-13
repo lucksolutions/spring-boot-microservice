@@ -1,4 +1,4 @@
-package gov.uscis.service.controller;
+package com.lucksolutions.service.controller;
 
 import org.junit.After;
 import org.junit.runner.RunWith;

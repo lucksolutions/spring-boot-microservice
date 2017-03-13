@@ -1,6 +1,4 @@
-package gov.uscis.service.controller;
-
-import gov.uscis.service.controller.AbstractControllerIT.RestClientConfig;
+package com.lucksolutions.service.controller;
 
 import javax.net.ssl.SSLContext;
 
@@ -23,6 +21,8 @@ import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.web.client.RestTemplate;
+
+import com.lucksolutions.service.controller.AbstractControllerIT.RestClientConfig;
 
 @RunWith(SpringRunner.class)
 @Import(RestClientConfig.class)

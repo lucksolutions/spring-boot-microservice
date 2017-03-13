@@ -43,6 +43,9 @@ dependencies {
     
     compile("org.apache.httpcomponents:httpclient")
     
+    //Auto-generate getters/setters and other glue code
+    compileOnly("org.projectlombok:lombok:1.16.14")
+    
     //Documentation Dependencies
     compile("io.springfox:springfox-swagger2:2.6.1")
     compile("io.springfox:springfox-swagger-ui:2.6.1")
