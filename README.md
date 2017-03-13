@@ -16,6 +16,6 @@
 
 ## Setup
 
-```bash
-docker run -d -p 80:8080 swaggerapi/swagger-editor
-```
+## Endpoints
+* API Documentation - /swagger-ui.html
+* 

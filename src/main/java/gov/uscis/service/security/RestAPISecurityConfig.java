@@ -26,6 +26,8 @@ public class RestAPISecurityConfig extends WebSecurityConfigurerAdapter {
 				.and()
 			.authorizeRequests()
 				.antMatchers("/").permitAll()
+				
+				//API Documentation
 				.antMatchers("/swagger-resoures/**").permitAll();
 //				.anyRequest().authenticated();
 //				.and()
