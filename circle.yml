@@ -1,18 +1,25 @@
 machine:
-#  pre:
-#    - curl -sSL https://s3.amazonaws.com/circle-downloads/install-circleci-docker.sh | bash -s -- 1.10.0
-
-  services:
-    - docker
+   timezone: America/New_York
+   java:
+      version: openjdk8
+   services:
+      - docker
 
 dependencies:
-  override:
-    - docker info
-    - docker build --rm=false -t lucksolutions/microservice-ref .
+   post:
+      - docker info
+    
+test:
+   override:
+      - gradle build
+   post:
+      - docker build --rm=false -t lucksolutions/microservice-ref .
+      - docker run -d -p 80:80 lucksolutions/microservice-ref; sleep 10
+      - curl --retry 10 --retry-delay 5 -v http://localhost/health
 
 deployment:
-  hub:
-    branch: master
-    commands:
-      - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
-      - docker push lucksolutions/microservice-ref
+   hub:
+      branch: master
+      commands:
+         - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+         - docker push lucksolutions/microservice-ref
