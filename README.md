@@ -8,9 +8,9 @@
 * Build Dockerfile
 
 ## Frameworks TODO List
-* REST Request/Response Model and Schema
+* ~~REST Request/Response Model and Schema~~
 * Security
-* Validation
+* ~~Validation~~
 * Auditing of requests for all endpoints.
 * ~~API Docs (Swagger v2)~~
 

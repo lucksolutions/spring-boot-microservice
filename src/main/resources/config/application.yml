@@ -1,3 +1,5 @@
+# See full list of available spring boot properties here: 
+# https://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
 
 #Application info endpoint (/info) configuration
 info:
@@ -15,15 +17,7 @@ logging:
    level:
       com.lucksolutions.service: INFO
       
-#Server SSL Configuration
-#The keystores and passwords need to be supplied external to the application
-#server:
-   #ssl:
-      #enabled: true
-      #client-auth: need
-      #key-store: classpath:certs/server.jks
-      #key-store-password: secret
-      #key-password: secret
-      #key-alias: test
-      #trust-store: classpath:certs/trust.jks
-      #trust-store-password: secret
+#Server Configuration
+server:
+   port: 80
+      
