@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+   microservice:
+      image: lucksolutions/microservice-ref
+      environment:
+         SERVER_KEYSTORE: ''
+         SERVER_KEYSTORE_PASSWORD_FILE: ''
+         SERVER_PASSWORD_FILE: ''
+         TRUST_KEYSTORE: ''
+         TRUST_KEYSTORE_PASSWORD_FILE: ''
+      ports: 
+            - 80:80
+      
