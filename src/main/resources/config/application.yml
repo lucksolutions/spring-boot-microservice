@@ -17,7 +17,4 @@ logging:
    level:
       com.lucksolutions.service: INFO
       
-#Server Configuration
-server:
-   port: 80
       

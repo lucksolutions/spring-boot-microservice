@@ -1,6 +1,14 @@
 version: '3'
 
 services:
+#   app-db:
+#        image: mysql
+#        environment: 
+#            MYSQL_RANDOM_ROOT_PASSWORD: 'yes'
+#            MYSQL_DATABASE: 'app'
+#            MYSQL_USER: 'appuser'
+#            MYSQL_PASSWORD: 'apppassword'
+
    microservice:
       image: lucksolutions/microservice-ref
       environment:
@@ -10,5 +18,5 @@ services:
          TRUST_KEYSTORE: ''
          TRUST_KEYSTORE_PASSWORD_FILE: ''
       ports: 
-            - 80:80
+            - 80:8080
       
