@@ -2,8 +2,6 @@ machine:
    timezone: America/New_York
    java:
       version: openjdk8
-   gradle:
-      version: 3.4.1
    services:
       - docker
 
