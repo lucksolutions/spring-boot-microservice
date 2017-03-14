@@ -2,13 +2,14 @@ version: 2
 
 jobs:
    build:
+      working_directory: ~/microservice-ref
       machine:
          enabled: true
-         timezone: America/New_York
-         java:
-            version: openjdk8
-         services:
-            - docker
+         #timezone: America/New_York
+         #java:
+            #version: openjdk8
+         #services:
+            #- docker
       steps:
          - checkout
          - run:
