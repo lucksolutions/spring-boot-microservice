@@ -5,5 +5,10 @@
 ## Setup
 
 ## Endpoints
+
+### Public
 * API Documentation - /swagger-ui.html
-* 
+
+### Admin
+* Log Configuration - /loggers
+* Audit Events - /auditevents
