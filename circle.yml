@@ -2,6 +2,8 @@ machine:
    timezone: America/New_York
    java:
       version: openjdk8
+   gradle:
+      version: 3.4.1
    services:
       - docker
 
@@ -11,7 +13,7 @@ dependencies:
     
 test:
    override:
-      - gradle build
+      - ./gradlew build
    post:
       - docker build --rm=false -t lucksolutions/microservice-ref .
       - docker run -d -p 80:80 lucksolutions/microservice-ref; sleep 10
