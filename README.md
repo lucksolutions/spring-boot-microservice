@@ -5,11 +5,11 @@
 
 ## Build TODO List
 * Finalize library version in gradle build file
-* Build Dockerfile
+* ~~Build Dockerfile~~
 
 ## Frameworks TODO List
 * ~~REST Request/Response Model and Schema~~
-* Security
+* ~~Security~~
 * ~~Validation~~
 * Auditing of requests for all endpoints.
 * ~~API Docs (Swagger v2)~~
