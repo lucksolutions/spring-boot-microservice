@@ -5,18 +5,14 @@ jobs:
       working_directory: ~/microservice-ref
       machine:
          enabled: true
-         #timezone: America/New_York
-         #java:
-            #version: openjdk8
-         #services:
-            #- docker
       steps:
          - checkout
+         #TODO Cache Dependencies to speed up build. For example: gradle and our used libraries, docker image we are extending, etc.
          - run:
             name: Build Application
             command: ./gradlew build
          - store_test_results:
-            path: build/reports/tests/test
+            path: build/test-results/test
          - run:
             name: Build Docker Container
             command: docker build --rm=false -t lucksolutions/microservice-ref .
