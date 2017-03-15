@@ -22,17 +22,9 @@ public @interface Auditable {
 	
 	/**
 	 * The type of audit event. Synonym
-	 * for {@link #evenType()}.
-	 * @return
-	 */
-	@AliasFor("eventType")
-	String value() default "";
-	
-	/**
-	 * The type of audit event. Synonym
 	 * for {@link #value()}.
 	 * @return
 	 */
 	@AliasFor("value")
-	String eventType() default "";
+	String eventType();
 }

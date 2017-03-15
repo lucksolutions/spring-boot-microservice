@@ -23,6 +23,11 @@ databaseChangeLog:
                   type: varchar(255)
                   constraints:
                      nullable: false
+            -  column:
+                  name: type
+                  type: varchar(255)
+                  constraints:
+                     nullable: false
 -  changeSet:
       id: 2
       author: Jason Luck

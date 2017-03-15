@@ -14,7 +14,7 @@ import com.lucksolutions.service.employment.model.VerificationRequest;
 @RequestMapping("/employment")
 public class EmploymentController {
 
-	@Auditable("/employment/verify request")
+	@Auditable(eventType="/employment/verify request")
 	@PostMapping(value="/verify", consumes = "application/json")
 	String verifyEmployability(@RequestBody @Valid VerificationRequest request) {
 		return String.format("Alien Number %s is: Employable", request.getAlienNumber());
