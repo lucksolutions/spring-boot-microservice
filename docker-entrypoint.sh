@@ -26,4 +26,6 @@ if [ ! -z "${TRUST_KEYSTORE_PASSWORD}" ]; then
 	JAVA_OPTS="$JAVA_OPTS -Dserver.ssl.trust-store-password=$TRUST_KEYSTORE_PASSWORD"
 fi
 
+JAVA_OPTS="$JAVA_OPTS -Dspring.profiles.active=docker"
+
 java $JAVA_OPTS -jar /app/microservice-ref.jar

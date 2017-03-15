@@ -22,14 +22,15 @@ logging:
 #   changelog: db/changelog/db.changelog-master.yaml
    
 # ---------- Docker Profile -------------
+---
 #Database Connection
-
-profiles: docker
-datasource:
-   url: jdbc:mysql://app-db/app
-   username: appuser
-   password: apppassword
-   driver-class-name: com.mysql.jdbc.Driver
+spring:
+   profiles: docker
+   datasource:
+      url: jdbc:mysql://app-db/app
+      username: appuser
+      password: apppassword
+      driver-class-name: com.mysql.jdbc.Driver
 
 
       
