@@ -6,8 +6,6 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-import org.springframework.core.annotation.AliasFor;
-
 /**
  * Annotation for generating audit events when the annotated method is called. Can
  * be configured to specify the event type and other attributes about the event.
@@ -25,6 +23,5 @@ public @interface Auditable {
 	 * for {@link #value()}.
 	 * @return
 	 */
-	@AliasFor("value")
 	String eventType();
 }
