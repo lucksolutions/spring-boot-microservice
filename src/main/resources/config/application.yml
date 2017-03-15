@@ -17,4 +17,20 @@ logging:
    level:
       com.lucksolutions.service: INFO
       
+#Database Schema Update
+#liquibase:
+#   changelog: db/changelog/db.changelog-master.yaml
+   
+# ---------- Docker Profile -------------
+#Database Connection
+
+profiles: docker
+datasource:
+   url: jdbc:mysql://app-db/app
+   username: appuser
+   password: apppassword
+   driver-class-name: com.mysql.jdbc.Driver
+
+
+      
       
