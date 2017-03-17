@@ -3,6 +3,7 @@ package com.lucksolutions.service.audit;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -35,7 +36,7 @@ public class PersistentAuditEvent extends AbstractModelObject {
 	@Column(nullable = false)
 	private String type;
 	
-	@OneToMany(fetch=FetchType.LAZY, mappedBy="event")
+	@OneToMany(fetch=FetchType.LAZY, mappedBy="event", cascade=CascadeType.ALL)
 	private List<PersistentAuditEventData> data;
 
 }

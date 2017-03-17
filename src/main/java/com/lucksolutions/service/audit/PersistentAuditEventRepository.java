@@ -11,9 +11,9 @@ import org.springframework.data.repository.query.Param;
 
 public interface PersistentAuditEventRepository extends Repository<PersistentAuditEvent, Long> {
 	
-	public PersistentAuditEvent save(PersistentAuditEvent events);
+	public PersistentAuditEvent save(PersistentAuditEvent event);
 	
-	public List<PersistentAuditEvent> save(List<PersistentAuditEvent> events);
+	public Iterable<PersistentAuditEvent> save(Iterable<PersistentAuditEvent> events);
 	
 	
 	/**
