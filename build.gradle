@@ -52,9 +52,12 @@ dependencies {
     compile("io.springfox:springfox-swagger-ui:2.6.1")
     
     //Database Connection and Schema Change Management
-    runtime("mysql:mysql-connector-java:6.0.6")
+    runtime("mysql:mysql-connector-java:5.1.38")
     compile("org.liquibase:liquibase-core")
     testCompile("org.hsqldb:hsqldb")
+    
+    //Kafka Integration
+    compile("org.springframework.kafka:spring-kafka")
 
     //Test Dependencies
     testImplementation('junit:junit:4.12')
