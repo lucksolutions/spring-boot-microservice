@@ -12,6 +12,9 @@
 docker-compose up --build
 ```
 
+## Documentation
+* [Spring Boot + Kafka](http://docs.spring.io/spring-boot/docs/1.5.2.RELEASE/reference/htmlsingle/#boot-features-kafka)
+
 ## Endpoints
 
 ### Public
