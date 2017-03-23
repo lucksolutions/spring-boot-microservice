@@ -23,14 +23,22 @@ logging:
    
 # ---------- Docker Profile -------------
 ---
-#Database Connection
+
 spring:
    profiles: docker
+   
+   #Database Connection
    datasource:
       url: jdbc:mysql://app-db/app
       username: appuser
       password: apppassword
       driver-class-name: com.mysql.jdbc.Driver
+   
+   #Kafka Connection info   
+   kafka:
+      bootstrap-servers: kafka:9092
+      consumer:
+         group-id: myGroup
 
 
       
