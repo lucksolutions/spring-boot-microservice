@@ -1,15 +1,19 @@
 package com.lucksolutions.service.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-public class Error extends AbstractModelObject {
+@NoArgsConstructor
+@AllArgsConstructor
+public class ErrorResponse extends AbstractModelObject {
 
 	private static final long serialVersionUID = 1781118757654270972L;
 
 	@Getter
 	@Setter
-	private int code;
+	private String code;
 
 	@Getter
 	@Setter
