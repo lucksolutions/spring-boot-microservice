@@ -27,7 +27,7 @@ public class AuditAdvice {
 		
 		final AuditEvent event = new AuditEvent(principal, auditable.eventType(), eventData);
 		
-		log.info("Firing Audit Event: " + event);
+		log.debug("Firing Audit Event: " + event);
 		auditRepository.add(event);
 	}
 }
