@@ -41,7 +41,7 @@ dependencies {
 	compile("org.springframework.boot:spring-boot-starter-data-jpa")
     compile("org.springframework.boot:spring-boot-starter-jetty")
     compile("org.springframework.boot:spring-boot-starter-actuator")
-    
+    compile("org.springframework.cloud:spring-cloud-starter-sleuth:1.2.0.RELEASE")
     compile("org.apache.httpcomponents:httpclient")
     
     //Auto-generate getters/setters and other glue code
