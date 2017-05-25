@@ -4,12 +4,24 @@ buildscript {
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.2.RELEASE")
+        classpath("org.jsonschema2pojo:jsonschema2pojo-gradle-plugin:0.4.9")
     }
 }
 
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
+apply plugin: 'jsonschema2pojo'
+
+sourceSets {
+	main { 
+		java.srcDir file("${project.buildDir}/generated-sources/js2p")
+	}
+	inttest {
+		java.srcDir file('src/inttest/java')
+		resources.srcDir file('src/inttest/resources')
+	}
+}
 
 processResources {
 	filesMatching("**/*.yml") {
@@ -59,10 +71,26 @@ dependencies {
     //Kafka Integration
     compile("org.springframework.kafka:spring-kafka:1.1.2.RELEASE")
     //testCompile("org.springframework.kafka:sping-kafka-test:1.1.2.RELEASE")
+    
+    //Rest API Dependencies
+  	compile("commons-lang:commons-lang:2.6")
+  	//compile 'javax.validation:validation-api:1.1.0.CR2'
+  	//compile 'com.fasterxml.jackson.core:jackson-databind:2.1.4'
 
     //Test Dependencies
     testImplementation('junit:junit:4.12')
     testCompile("org.springframework.boot:spring-boot-starter-test")
     testCompile("org.springframework.security:spring-security-test")
+}
+
+//https://github.com/joelittlejohn/jsonschema2pojo/tree/master/jsonschema2pojo-gradle-plugin
+jsonSchema2Pojo {
+	sourceType = 'jsonschema'
+	source = files("${sourceSets.main.output.resourcesDir}/schema")
+	targetDirectory = file("${project.buildDir}/generated-sources/js2p")
+	targetPackage = 'com.lucksolutions.service.api'
+	includeJsr303Annotations = true
+	classNameSuffix = "v1"
+	//serializable = true
 }
 
