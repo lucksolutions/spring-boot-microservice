@@ -12,6 +12,12 @@
 docker-compose up --build
 ```
 
+## Service Versioning
+Different versions will be implemented using the Adapter Based versioning strategy. In this strategy a single build of the application is responsible for providing all versions of the API protocol that are still supported. The latest version model object is “adapted” to the older version JSON formats by wrapping it in a wrapper object.
+
+Clients are required to specify the version of the service they want to use. The version is specified by setting the ‘Accept’ and 'Content-Type' header values to the version number the client is requesting/sending. If the client does not specify a version, the service will return a 415 response. Clients should ignore any unrecognized JSON attributes when parsing responses.
+
+
 ## Kafka Integration Testing
 1. Add the following entry to your /etc/hosts file
 ```
