@@ -8,10 +8,11 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.MediaType;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+
+import com.lucksolutions.service.api.Version;
 
 public class ServiceControllerTest extends AbstractControllerTest {
 	@Autowired
@@ -24,7 +25,8 @@ public class ServiceControllerTest extends AbstractControllerTest {
     public void getHello() throws Exception {
         mvc.perform(MockMvcRequestBuilders.get("/")
         		.secure(true)
-        		.accept(MediaType.APPLICATION_JSON))
+        		.accept(Version.V1)
+        		.contentType(Version.V1))
                 .andExpect(status().isOk())
                 .andExpect(content().string(equalTo("Hello World!")));
     }
@@ -36,7 +38,8 @@ public class ServiceControllerTest extends AbstractControllerTest {
         mvc.perform(MockMvcRequestBuilders.get("/secured")
         			.secure(true)
         			.with(x509(clientCert))
-        			.accept(MediaType.APPLICATION_JSON))
+        			.accept(Version.V1)
+        			.contentType(Version.V1))
                 .andExpect(status().isOk())
                 .andExpect(content().string(equalTo("Access Granted")));
     }

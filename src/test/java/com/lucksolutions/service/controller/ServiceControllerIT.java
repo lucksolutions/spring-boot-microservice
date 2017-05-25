@@ -11,8 +11,13 @@ import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.embedded.LocalServerPort;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
+
+import com.lucksolutions.service.api.Version;
 
 
 public class ServiceControllerIT extends AbstractControllerIT {
@@ -34,8 +39,12 @@ public class ServiceControllerIT extends AbstractControllerIT {
 
     @Test
     public void getHello() throws Exception {
-        ResponseEntity<String> response = template.getForEntity(base.toString(),
-                String.class);
+    	HttpHeaders headers = new HttpHeaders();
+    	headers.add(HttpHeaders.ACCEPT, Version.V1);
+    	headers.add(HttpHeaders.CONTENT_TYPE, Version.V1);
+    	
+    	HttpEntity<String> request = new HttpEntity<String>(headers);
+        ResponseEntity<String> response = template.exchange(base.toString(), HttpMethod.GET, request, String.class);
         assertThat(response.getBody(), equalTo("Hello World!"));
     }
 }

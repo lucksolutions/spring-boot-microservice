@@ -5,7 +5,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.lucksolutions.service.api.Version;
+
 @RestController
+@RequestMapping(produces=Version.V1, consumes=Version.V1)
 public class ServiceController {
 
 	@RequestMapping(method=RequestMethod.GET, value="/")
