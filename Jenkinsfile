@@ -18,16 +18,20 @@ pipeline {
       }
     }
     stage('Build Docker Image') {
+      def dockImg = docker.build('lucksolutions/spring-boot-microservice:${env.BUILD_TAG}')
       steps {
-        def dockImg = docker.build "lucksolutions/spring-boot-microservice:${env.BUILD_TAG}"
         dockImg.push()
       }
     }
     stage('Deploy and Test Image') {
-
+      steps {
+        echo 'TODO: Run functional tests'
+      }
     }
     stage('Approve Docker Image') {
-      dockImg.push 'latest'
+      steps {
+        dockImg.push 'latest'
+      }
     }
   }
 }
