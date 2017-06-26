@@ -14,7 +14,7 @@ pipeline {
     stage('Unit Test') {
       steps {
         sh './gradlew test'
-        junit(testResults: 'build/reports/tests', allowEmptyResults: true)
+        junit(testResults: '**/build/test-results/test/TEST-*.xml', allowEmptyResults: true)
       }
     }
   }
