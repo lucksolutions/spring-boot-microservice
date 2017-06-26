@@ -19,13 +19,15 @@ pipeline {
     }
     stage('Build Docker Image') {
       steps {
-        // environment { 
-        //   DOCKER_REGISTRY = credentials('docker-registry') 
-        // }
-        sh 'docker build'
-        //sh 'docker login -u $DOCKER_REGISTRY_USR -p $DOCKER_REGISTRY_PSW'
-        sh 'docker push'
+        def dockImg = docker.build "lucksolutions/spring-boot-microservice:${env.BUILD_TAG}"
+        dockImg.push()
       }
+    }
+    stage('Deploy and Test Image') {
+
+    }
+    stage('Approve Docker Image') {
+      dockImg.push 'latest'
     }
   }
 }
