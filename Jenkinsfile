@@ -6,10 +6,15 @@ pipeline {
         git(url: 'https://github.com/lucksolutions/spring-boot-microservice', branch: 'master', changelog: true, poll: true)
       }
     }
-
     stage('Compile') {
       steps {
-        sh './gradlew build'
+        sh './gradlew compile'
+      }
+    }
+    stage('Unit Test') {
+      steps {
+        sh './gradlew test'
+        junit(testResults: 'build/reports/tests', allowEmptyResults: true)
       }
     }
   }
