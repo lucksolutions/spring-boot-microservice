@@ -1,5 +1,8 @@
 pipeline {
   agent any
+  tools {
+    docker('latest')
+  }
   stages {
     stage('Checkout') {
       steps {
@@ -15,6 +18,16 @@ pipeline {
       steps {
         sh './gradlew test'
         junit(testResults: '**/build/test-results/test/TEST-*.xml', allowEmptyResults: true)
+      }
+    }
+    stage('Build Docker Image') {
+      steps {
+        // environment { 
+        //   DOCKER_REGISTRY = credentials('docker-registry') 
+        // }
+        sh 'docker build'
+        //sh 'docker login -u $DOCKER_REGISTRY_USR -p $DOCKER_REGISTRY_PSW'
+        sh 'docker push'
       }
     }
   }
