@@ -1,6 +1,7 @@
 # Java Microservice Framework
 
 [![CircleCI](https://circleci.com/gh/lucksolutions/spring-boot-microservice.svg?style=svg)](https://circleci.com/gh/lucksolutions/spring-boot-microservice)
+Code Analysis at: https://sonarcloud.io/dashboard?id=microservice
 
 ## Setup
 1. Build the microservice app
