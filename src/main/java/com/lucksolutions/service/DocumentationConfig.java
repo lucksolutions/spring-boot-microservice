@@ -65,8 +65,7 @@ public class DocumentationConfig {
 	private ApiInfo apiInfo() {
 		Contact contact = new Contact(contactName, contactUrl, contactEmail);
 
-		ApiInfo info = new ApiInfo(appName, appDescription, appVersion, "",
+		return new ApiInfo(appName, appDescription, appVersion, "",
 				contact, "", "");
-		return info;
 	}
 }
