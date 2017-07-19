@@ -22,7 +22,7 @@ public class Application {
 	
 	protected final Log logger = LogFactory.getLog(getClass());
 
-	public static void main(String[] args) throws Exception {
+	public static void main(String[] args) {
 		new SpringApplicationBuilder()
 			.sources(Application.class)
 			.bannerMode(Banner.Mode.OFF)
