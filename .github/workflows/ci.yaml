@@ -3,7 +3,7 @@ on:
   pull_request:
   push:
     branches:
-      - main
+      - master
       - beta
       - next
       - "*.x" #Maintenance Release Branches
